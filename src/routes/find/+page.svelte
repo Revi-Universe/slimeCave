@@ -30,17 +30,23 @@
         vertical-align: middle;
         margin-right: 10px;
     }
-    button:hover {
-        background: #26395966;
-    }
     .forest {
         background: #37946E;
+    }
+    .forest:hover {
+        background: #1e4f3b;
     }
     .ocean {
         background: #13B0D0;
     }
+    .ocean:hover {
+        background: #0b5d6f;
+    }
     .volcano {
         background: #222034;
+    }
+    .volcano:hover {
+        background: #12111c;
     }
 </style>
 
