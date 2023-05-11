@@ -2,7 +2,7 @@ export const eggs = new Array();
 const chances = new Array(10, 30);
 const prefixes = new Array("반짝이는 ", "찬란한 ", "빛나는 ", "");
 const colors = new Array("붉은 ", "푸른 ", "검은 ", "흰 ", "얼룩무늬 ");
-const regions = new Array("forest", "ocean");
+const regions = new Array("forest", "ocean", "volcano");
 
 function makeRarity(rand: number): number {
     let rarity: number = 0;
