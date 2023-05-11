@@ -14,7 +14,8 @@
         position: relative;
     }
     div > div {
-        max-width: 680px;
+        max-width: 520px;
+        min-width: 388px;
         margin: 16px auto 72px auto;
         flex-grow: 1;
     }
