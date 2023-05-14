@@ -1,8 +1,18 @@
-export const eggs = new Array();
+import { creatureInfo } from './dataTable'
+
+type Creature = {
+    infoIndex: number,
+    expire: Date,
+    isLocked: boolean
+}
+
+type OwnedCreature = Omit<Creature, "isLocked"> & { 
+    owner: string,
+    crack: number,
+}
+
+export const creature: Creature[] = new Array();
 const chances = new Array(10, 30);
-const prefixes = new Array("반짝이는 ", "찬란한 ", "빛나는 ", "");
-const colors = new Array("붉은 ", "푸른 ", "검은 ", "흰 ", "얼룩무늬 ");
-const regions = new Array("forest", "ocean", "volcano");
 
 function makeRarity(rand: number): number {
     let rarity: number = 0;
@@ -12,20 +22,20 @@ function makeRarity(rand: number): number {
     return rarity;
 }
 
-function ArrayRandomItem(arr: Array<any>): any {
+function ArrayRandomItem<T>(arr: T[]): T {
     return arr[Math.floor(Math.random() * arr.length)]
 }
 
 setInterval(() => {
-    if (eggs.length < 30) {
+    if (creature.length < 30) {
         const rarity = makeRarity(Math.random());
-        const prefix = rarity == 2 ? ArrayRandomItem(prefixes) : "";
-        const name = ArrayRandomItem(colors) + "알";
+        const expire = new Date();
+        expire.setDate(expire.getDate() + 3);
 
-        eggs.push({
-            name: prefix + name,
-            rarity: rarity,
-            region: ArrayRandomItem(regions)
+        creature.push({
+            infoIndex: 0,
+            expire: expire,
+            isLocked: false
         });
     }
 }, 1000);
